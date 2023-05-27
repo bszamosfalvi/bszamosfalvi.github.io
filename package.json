@@ -1,0 +1,23 @@
+{
+  "name": "bszamosfalvi.github.io",
+  "version": "0.1.0",
+  "description": "personal website for Balazs Szamosfalvi",
+  "main": "index.js",
+  "repository": "https://github.com/bszamosfalvi/bszamosfalvi.github.io",
+  "author": "Balazs Szamosfalvi <bszamosf@umich.edu>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "npm-run-all": "^4.0.2"
+  },
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "harp": "^0.24.0"
+  },
+  "scripts": {
+    "livereload": "browser-sync start --proxy localhost:9000 --files _harp/**/* --no-notify",
+    "server": "harp server _harp --port 9000",
+    "start": "npm-run-all --parallel server livereload",
+    "build": "node ./bin/build.js"
+  }
+}
